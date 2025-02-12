@@ -38,11 +38,11 @@ public class OpenAIService : IOpenAIService
         var completion = await _chatClient.CompleteChatAsync(prompt);
         return completion.Value.Content[0].Text;
     }
+    public async Task<string> GenerateCompletionAsync(List<ChatMessage> chatHisotry)
+    {
+        var completion = await _chatClient.CompleteChatAsync(chatHisotry);
+        return completion.Value.Content[0].Text;
+    }
 
 
-    //public async Task<string> GenerateChatCompletionAsync(string prompt)
-    //{
-    //    var completion = await _chatClient.CompleteChatAsync(prompt);
-    //    return completion.Value.Content[0].Text;
-    //}
 }

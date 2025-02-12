@@ -9,4 +9,5 @@ public interface IOpenAIService
 {
     Task<string> GenerateCompletionAsync(string prompt);
     Task<ReadOnlyMemory<float>> GenerateEmbeddingsAsync(string input);
+    Task<string> GenerateCompletionAsync(List<ChatMessage> chatHisotry);
 }
